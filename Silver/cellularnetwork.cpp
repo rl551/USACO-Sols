@@ -2,6 +2,7 @@
 #include "bits/stdc++.h"
 #define ll long long
 #define vll vector<ll>
+#define pb push_back
 using namespace std;
 
 ll N, M;
