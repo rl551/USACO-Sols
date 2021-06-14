@@ -36,7 +36,7 @@ bool check(ll T){
                 xpos++;
             }
             index++;
-            }
+        }
         xpos += ((T-T%N-1)/N)*(xpos-xi);
         ypos += ((T-T%N-1)/N)*(ypos-yi);
         index = 0;
