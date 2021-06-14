@@ -1,7 +1,6 @@
 //https://codeforces.com/problemset/problem/1117/C
 #include "bits/stdc++.h"
 #define ll long long
-#define pb push_back
 using namespace std;
 
 ll xi, yi, xf, yf;
