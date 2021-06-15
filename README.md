@@ -1,2 +1,2 @@
-# USACO
-My USACO Solutions
+# CP
+CP Sols
