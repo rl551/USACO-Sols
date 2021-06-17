@@ -10,8 +10,7 @@ vll cities;
 vll towers;
 
 bool check(ll R){
-    bool ans = true;
-    bool possible = false;
+    bool ans = true, possible = false;
     for(int i=0; i<N; ++i){
         possible = false;
         ll l=0, h=M-1, m=(l+h)/2;
@@ -59,5 +58,4 @@ int main(){
             mid = (low+high)/2;
         }
     }
-
 }
