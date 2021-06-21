@@ -6,9 +6,9 @@
 #define ll long long
 using namespace std;
 
-ll N, curpos, ans = 0;
-vector<pair<ll, ll> > coord;
-vector<vector<ll> >xcoord(2*pow(10,4)+1), ycoord(2*pow(10,4)+1), xpsum(2*pow(10,4)+1), ypsum(2*pow(10,4)+1);
+int N, curpos, ans = 0;
+vector<pair<int, int> > coord;
+vector<vector<int> >xcoord(2*pow(10,4)+1), ycoord(2*pow(10,4)+1), xpsum(2*pow(10,4)+1), ypsum(2*pow(10,4)+1);
 
 int xbsearch(pair<int, int> x){
     int low = 0, high = ycoord[x.s+pow(10,4)].size()-1, mid = (low+high)/2;
@@ -98,7 +98,6 @@ int main(){
         ans += width*height;
         ans %= 1000000007;
     }
-    ans %= 1000000007;
     fout << ans;
 
     return 0;
