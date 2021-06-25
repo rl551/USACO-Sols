@@ -1,2 +1,2 @@
-# CP
-My CP Sols
+# USACO
+My USACO Sols
