@@ -7,7 +7,6 @@
 using namespace std;
 
 int N;
-
 vector<pair<int, pair<int, int> > > ans;
 vector<pair<bool, pair<int, int> > > input, east, north;
 
