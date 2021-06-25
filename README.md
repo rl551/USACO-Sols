@@ -1,2 +1,2 @@
-# USACO
+# USACO Sols
 My USACO Sols
