@@ -35,7 +35,7 @@ bool ax(const pair<int, pair<int, int> >&a, const pair<int, pair<int, int> >&b){
 bool intersect(const int &eindex, const int &nindex){
     return(east[eindex].s.f <= north[nindex].s.f && east[eindex].s.s >= north[nindex].s.s);
 }
-int bsearch(const pair<bool, pair<int, int> >&a){//bsearch for a in v
+int bsearch(const pair<bool, pair<int, int> >&a){//bsearch for a in ans
     int low = 0, high = N-1, mid = (low+high)/2;
     while(low <= high){
         if(ans[mid].s.f == a.s.f && ans[mid].s.s == a.s.s){
