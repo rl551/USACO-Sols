@@ -7,12 +7,7 @@ int N;
 int grid[MAXN][MAXN], atleast[MAXN][MAXN], psum[MAXN][MAXN];
 
 ll solve(int target){//at least target
-    for(int i=0; i<=N; ++i){
-        for(int j=0; j<=N; ++j){
-            psum[i][j] = 0;
-        }
-    }
-    ll ans = 0;
+    ll ans = 0, tempcount = 0;
     for(int i=1; i<=N; ++i){
         for(int j=1; j<=N; ++j){
             if(grid[i][j] >= target){
@@ -27,7 +22,6 @@ ll solve(int target){//at least target
             psum[i][j] = psum[i-1][j]+psum[i][j-1]-psum[i-1][j-1]+atleast[i][j];
         }
     }
-    ll tempcount = 0;
     for(int i=1; i<=N; ++i){
         for(int j=i; j<=N; ++j){
             tempcount = 0;
