@@ -5,14 +5,10 @@ using namespace std;
 int N, M;
 vector<vector<int> > adj(3001);
 vector<int> close;
-vector<bool> ordered(3001);
-vector<bool> visited(3001);
+vector<bool> ordered(3001), visited(3001);
 
 void dfs(int start){
-    if(visited[start]){
-        return;
-    }
-    if(!ordered[start]){
+    if(visited[start] || !ordered[start]){
         return;
     }
     visited[start] = true;
@@ -27,7 +23,6 @@ int main(){
 
     ifstream fin("closing.in");
     ofstream fout("closing.out");
-
     fin >> N >> M;
     for(int i=0; i<M; ++i){
         int a, b; fin >> a >> b;
@@ -44,10 +39,8 @@ int main(){
         dfs(close[N-1]);
         bool possible = true;
         for(int j=1; j<=N; ++j){
-            if(ordered[j]){
-                if(!visited[j]){
-                    possible = false;
-                }
+            if(ordered[j] && !visited[j]){
+                possible = false;
             }
         }
         if(possible){
