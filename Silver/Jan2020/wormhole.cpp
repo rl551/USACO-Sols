@@ -70,13 +70,12 @@ int main(){
     }
     if(done){
         fout << -1;
-        return 0;
     } else{
         int low=0, high=1e9, mid=(low+high)/2;
         while(low <= high){
             if(check(mid) && !check(mid+1)){
                 fout << mid;
-                break;
+                return 0;
             } else if(!check(mid)){
                 high = mid-1;
                 mid = (low+high)/2;
