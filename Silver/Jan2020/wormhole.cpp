@@ -71,17 +71,17 @@ int main(){
     if(done){
         fout << -1;
     } else{
-        int low=0, high=1e9, mid=(low+high)/2;
-        while(low <= high){
-            if(check(mid) && !check(mid+1)){
-                fout << mid;
+        int lo=0, hi=1e9, mi=(lo+hi)/2;
+        while(lo <= hi){
+            if(check(mi) && !check(mi+1)){
+                fout << mi;
                 return 0;
-            } else if(!check(mid)){
-                high = mid-1;
-                mid = (low+high)/2;
+            } else if(!check(mi)){
+                hi = mi-1;
+                mi = (lo+hi)/2;
             } else{
-                low = mid+1;
-                mid = (low+high)/2;
+                lo = mi+1;
+                mi = (lo+hi)/2;
             }
         }
     }
