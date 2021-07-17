@@ -1,12 +1,11 @@
-//timeout on tc10 fsr(idek why)
 #include "bits/stdc++.h"
-const long NM=500;
+const long MN=500;
 const long long X_CHANGE[]={1, 0, -1, 0};
 const long long Y_CHANGE[]={0, -1, 0, 1};
 using namespace std;
 
-long long M, N, course[NM][NM];
-bool visited[NM][NM], waypoint[NM][NM];
+long long M, N, course[MN][MN];
+bool visited[MN][MN], waypoint[MN][MN];
 
 void floodfill(long long i, long long j, long long D){
     if(visited[i][j] || (i<0 || i>=M || j<0 || j>=N)) return;
