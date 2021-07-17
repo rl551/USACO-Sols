@@ -42,10 +42,10 @@ int main(){
     }
     long long lo = 0, hi = 1e9, best;
     while (lo <= hi) {
-        long long mid = (lo + hi) / 2;
+        long long mid = (lo+hi)/2;
         if (check(mid)) {
             best = mid;
-            hi = mid - 1;
+            hi = mid-1;
         } else lo=mid+1;
     }
     fout << best;
