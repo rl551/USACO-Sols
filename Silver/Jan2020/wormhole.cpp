@@ -1,4 +1,4 @@
-#include "bits/stdc++.h"//timeout on tc10
+#include "bits/stdc++.h"
 #define f first
 #define s second
 using namespace std;
@@ -20,7 +20,7 @@ void dfs(int start, int mid){
     }
 }
 bool inarray(int target){
-    int lo=0, hi=temp.size()-1, mi=(lo+hi)/2;
+    int lo=0, hi=temp.size()-1, mi=(lo+hi)/2;;
     while(lo <= hi){
         if(temp[mi] == target){
             return true;
@@ -68,21 +68,16 @@ int main(){
             break;
         }
     }
-    if(done){
-        fout << -1;
-    } else{
-        int lo=0, hi=1e9, mi=(lo+hi)/2;
+    if(done) fout << -1;
+    else{
+        int lo=0, hi=1e9, ans;
         while(lo <= hi){
-            if(check(mi) && !check(mi+1)){
-                fout << mi;
-                return 0;
-            } else if(!check(mi)){
-                hi = mi-1;
-                mi = (lo+hi)/2;
-            } else{
-                lo = mi+1;
-                mi = (lo+hi)/2;
-            }
+            int mi=(lo+hi)/2;
+            if(check(mi)){
+                ans=mi;
+                lo=mi+1;
+            } else hi=mi-1;
         }
+        fout << ans;
     }
 }
