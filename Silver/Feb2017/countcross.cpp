@@ -46,7 +46,7 @@ int main(){
             notdistant += counter*(counter-1)/2;
         }
     }
-    fout << K*(K-1)/2-ans;
+    fout << K*(K-1)/2-notdistant;
 
 	return 0;
 }
