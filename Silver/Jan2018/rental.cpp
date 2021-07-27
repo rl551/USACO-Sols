@@ -26,25 +26,22 @@ bool ncomp(const int&a, const int&b){
 }
 
 int bsearch(int target){//lowerbound for target in spsum.f
-    int low = 0, high = M, mid = (low+high)/2;
-    while(low <= high){
-        if(spsum[mid].f <= target && (mid == M || spsum[mid+1].f>target)){
-            return mid;
-        } else if(spsum[mid].f>target){
-            high = mid-1;
-            mid = (low+high)/2;
-        } else{
-            low = mid+1;
-            mid = (low+high)/2;
-        }
-    }
+	int low=0, high=M, ans;
+	while(low <= high){
+		int mid=(low+high)/2;
+		if(spsum[mid].first <= target){
+			ans=mid;
+			low=mid+1;
+		}
+		else high=mid-1;
+	}
+	return ans;
 }
 
 int main(){
 
     ifstream fin("rental.in");
     ofstream fout("rental.out");
-
     fin >> N >> M >> R;
     for(int i=0; i<N; ++i){
         ll c; fin >> c;
