@@ -41,7 +41,7 @@ int main(){
                         counter0=0, counter1=0;
                         letters.clear();
                         for(auto &u: templetters) letters.push_back(u);
-                        fill(&visited[0][0], &visited[0][0]+N*N, false);
+                        fill(&visited[0][0], &visited[0][0]+MAXN*MAXN, false);
                         for(int m=i; m<=j; ++m){
                             for(int n=k; n<=l; ++n){
                                 if(!visited[m][n] && farm[m][n] == letters[0]){
