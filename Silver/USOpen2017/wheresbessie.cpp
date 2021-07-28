@@ -1,4 +1,6 @@
 #include "bits/stdc++.h"
+const int X_CHANGE[]={-1, 0, 1, 0};
+const int Y_CHANGE[]={0, 1, 0, -1};
 #define MAXN 20
 using namespace std;
 
@@ -13,10 +15,7 @@ set<int> inside;
 void ff(int a, int b, int c, int d, int i, int j, char l){//xmin=a, xmax=b, ymin=c, ymin=d
     if(visited[i][j] || (i<a || i>b || j<c || j>d) || farm[i][j] != l) return;
     visited[i][j] = true;
-    ff(a, b, c, d, i-1, j, l);
-    ff(a, b, c, d, i+1, j, l);
-    ff(a, b, c, d, i, j-1, l);
-    ff(a, b, c, d, i, j+1, l);
+    for(int k=0; k<4; ++k) ff(a, b, c, d, i+X_CHANGE[k], j+Y_CHANGE[k], l);
 }
 
 int main(){
@@ -42,7 +41,7 @@ int main(){
                         counter0=0, counter1=0;
                         letters.clear();
                         for(auto &u: templetters) letters.push_back(u);
-                        fill(&visited[0][0], &visited[0][0]+400, false);
+                        fill(&visited[0][0], &visited[0][0]+N*N, false);
                         for(int m=i; m<=j; ++m){
                             for(int n=k; n<=l; ++n){
                                 if(!visited[m][n] && farm[m][n] == letters[0]){
