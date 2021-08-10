@@ -42,7 +42,7 @@ int main(){
     for(int i=0; i<N; ++i) r.push_back(make_pair(ub(i),i));
     for(int i=N-1; i>=0; --i) prefix[i]=max(prefix[i+1], l[i].second-l[i].first+1);
     for(int i=0; i<N; ++i) suffix[i]=max(suffix[i-1], r[i].second-r[i].first+1);
-    for(int i=1; i<N-1; ++i) ans=max(ans,suffix[i]+prefix[i+1]);
+    for(int i=0; i<N-1; ++i) ans=max(ans,suffix[i]+prefix[i+1]);
     fout << ans;
 
     return 0;
