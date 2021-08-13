@@ -1,4 +1,3 @@
-//wrong on tc4
 #include "bits/stdc++.h"
 #define pb push_back
 #define mp make_pair
@@ -29,7 +28,7 @@ int main(){
     }
     sort(A.begin(), A.end(), comp);
     for(int i=0; i<N; ++i){
-        ans = max(ans, abs(A[i].s-i));
+        ans = max(ans, A[i].s-i));
     }
     fout << ans+1;
 
