@@ -3,7 +3,6 @@ using namespace std;
 
 int N, K;
 vector<int> haybales;
-
 bool check(int R){
     int curindex=-1;
     for(int i=0; i<K; ++i){
